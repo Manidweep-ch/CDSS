@@ -1,0 +1,146 @@
+.pdf-uploader {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.uploader-header h3 {
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.uploader-header p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.upload-zone {
+  border: 2px dashed var(--border);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: var(--bg-tertiary);
+}
+
+.upload-zone:hover {
+  border-color: var(--primary);
+  background: rgba(8, 145, 178, 0.05);
+}
+
+.upload-zone.drag-active {
+  border-color: var(--primary);
+  background: rgba(8, 145, 178, 0.1);
+  transform: scale(1.02);
+}
+
+.upload-zone.uploading {
+  cursor: not-allowed;
+  border-color: var(--text-tertiary);
+}
+
+.upload-prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.upload-icon {
+  color: var(--primary);
+  opacity: 0.7;
+}
+
+.upload-prompt h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.upload-prompt p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.btn-upload {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: white;
+  margin-top: 0.5rem;
+}
+
+.upload-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.spinner-large {
+  width: 48px;
+  height: 48px;
+  border: 4px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.upload-status h4 {
+  margin: 0;
+  color: var(--primary);
+}
+
+.upload-status p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.upload-error {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: var(--radius-sm);
+  color: var(--danger);
+  font-size: 0.9rem;
+}
+
+.upload-info {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius);
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.info-item svg {
+  color: var(--success);
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .upload-zone {
+    padding: 2rem 1rem;
+  }
+
+  .upload-info {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+}

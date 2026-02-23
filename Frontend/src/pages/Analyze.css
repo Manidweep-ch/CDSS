@@ -1,0 +1,62 @@
+.analyze-page {
+  max-width: 1400px;
+}
+
+.upload-section {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: 0 4px 20px var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.status-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.status-banner.success {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(52, 211, 153, 0.05));
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.status-banner.historical {
+  background: linear-gradient(135deg, rgba(8, 145, 178, 0.1), rgba(6, 182, 212, 0.05));
+  border-color: rgba(8, 145, 178, 0.3);
+}
+
+.status-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.status-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.status-content h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.1rem;
+}
+
+.status-content p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .status-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

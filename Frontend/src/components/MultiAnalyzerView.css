@@ -1,0 +1,226 @@
+.multi-analyzer-container {
+  margin-top: 1.5rem;
+}
+
+.analyzer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.analyzer-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.results-summary {
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(52, 211, 153, 0.05));
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: var(--radius-lg);
+  margin-bottom: 2rem;
+}
+
+.results-summary h4 {
+  margin: 0 0 1rem 0;
+  color: var(--success);
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.result-item-card {
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.result-item-card:hover {
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.result-item-card strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.result-item-card span {
+  color: var(--text-primary);
+}
+
+.chat-toggle-btn {
+  margin-top: 1rem;
+  padding: 0.875rem 1.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.chat-toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(8, 145, 178, 0.3);
+}
+
+.chat-container {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.chat-message-count {
+  padding: 0.75rem 1rem;
+  background: rgba(8, 145, 178, 0.1);
+  border: 1px solid rgba(8, 145, 178, 0.3);
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.chat-messages {
+  margin-bottom: 1rem;
+}
+
+.chat-message {
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  border: 1px solid var(--border);
+}
+
+.chat-message.user {
+  background: rgba(8, 145, 178, 0.1);
+  border-color: rgba(8, 145, 178, 0.3);
+}
+
+.chat-message.assistant {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+.chat-message strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.chat-message-content {
+  white-space: pre-wrap;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.chat-input-container {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.chat-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
+}
+
+.chat-send-btn {
+  padding: 0.875rem 1.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.chat-send-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(8, 145, 178, 0.3);
+}
+
+.chat-send-btn:disabled {
+  background: var(--text-tertiary);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.empty-message {
+  color: var(--text-tertiary);
+  font-style: italic;
+  text-align: center;
+  padding: 2rem;
+}
+
+.unsupported-tests {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: var(--radius-lg);
+}
+
+.unsupported-tests h4 {
+  margin: 0 0 0.75rem 0;
+  color: var(--warning);
+  font-size: 1.1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.unsupported-tests p {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.unsupported-tests ul {
+  margin: 0 0 0.75rem 0;
+  padding-left: 1.5rem;
+}
+
+.unsupported-tests li {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.unsupported-tests .note {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
