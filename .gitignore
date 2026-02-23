@@ -60,3 +60,8 @@ logs/
 .coverage
 htmlcov/
 .pytest_cache/
+
+# Utility scripts (not needed in production)
+Backend/cleanup_orphaned_evaluations.py
+Backend/generate_sample_pdfs.py
+Backend/runtime.txt
