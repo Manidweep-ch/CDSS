@@ -3,17 +3,11 @@ import { createContext, useState, useEffect } from "react";
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [token, setToken] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Check localStorage on mount
-    const storedToken = localStorage.getItem("token");
-    if (storedToken) {
-      setToken(storedToken);
-    }
-    setLoading(false);
-  }, []);
+  const [token, setToken] = useState(() => {
+    // Initialize from localStorage immediately
+    return localStorage.getItem("token");
+  });
+  const [loading, setLoading] = useState(false);
 
   const login = (newToken) => {
     localStorage.setItem("token", newToken);
@@ -25,12 +19,8 @@ export const AuthProvider = ({ children }) => {
     setToken(null);
   };
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
   return (
-    <AuthContext.Provider value={{ token, login, logout }}>
+    <AuthContext.Provider value={{ token, login, logout, loading }}>
       {children}
     </AuthContext.Provider>
   );

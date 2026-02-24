@@ -12,8 +12,14 @@ import History from "./pages/History";
 import ViewEvaluation from "./pages/ViewEvaluation";
 
 function PrivateRoute({ children }) {
-  const { token } = useContext(AuthContext);
-  return token ? children : <Navigate to="/login" />;
+  const { token, loading } = useContext(AuthContext);
+  
+  // Show nothing while checking auth (prevents flash)
+  if (loading) {
+    return null;
+  }
+  
+  return token ? children : <Navigate to="/login" replace />;
 }
 
 function App() {
