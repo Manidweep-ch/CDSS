@@ -12,17 +12,21 @@ import History from "./pages/History";
 import ViewEvaluation from "./pages/ViewEvaluation";
 
 function PrivateRoute({ children }) {
-  const { token, loading } = useContext(AuthContext);
+  const { token } = useContext(AuthContext);
   
-  // Show nothing while checking auth (prevents flash)
-  if (loading) {
-    return null;
+  console.log("PrivateRoute check, token:", token ? "exists" : "null");
+  
+  if (!token) {
+    console.log("No token, redirecting to login");
+    return <Navigate to="/login" replace />;
   }
   
-  return token ? children : <Navigate to="/login" replace />;
+  return children;
 }
 
 function App() {
+  console.log("App version: 2024-02-24-v2");
+  
   return (
     <ThemeProvider>
       <BrowserRouter>

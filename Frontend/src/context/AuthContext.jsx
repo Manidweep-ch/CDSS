@@ -1,26 +1,34 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState } from "react";
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+  // Initialize token synchronously from localStorage
   const [token, setToken] = useState(() => {
-    // Initialize from localStorage immediately
-    return localStorage.getItem("token");
+    try {
+      const storedToken = localStorage.getItem("token");
+      console.log("AuthContext initialized, token:", storedToken ? "exists" : "null");
+      return storedToken;
+    } catch (error) {
+      console.error("Error reading token from localStorage:", error);
+      return null;
+    }
   });
-  const [loading, setLoading] = useState(false);
 
   const login = (newToken) => {
+    console.log("Login called with token");
     localStorage.setItem("token", newToken);
     setToken(newToken);
   };
 
   const logout = () => {
+    console.log("Logout called");
     localStorage.removeItem("token");
     setToken(null);
   };
 
   return (
-    <AuthContext.Provider value={{ token, login, logout, loading }}>
+    <AuthContext.Provider value={{ token, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
