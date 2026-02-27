@@ -4,4 +4,10 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  server: {
+    historyApiFallback: true  // Fix for dev server page reload
+  },
+  preview: {
+    historyApiFallback: true  // Fix for production preview
+  }
 })
